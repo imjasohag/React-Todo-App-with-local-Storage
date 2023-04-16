@@ -14,6 +14,8 @@ function Todo(props) {
                     return true
                 }
             })
+            localStorage.setItem('todos', JSON.stringify(newTodos))
+
             return newTodos;
         })
     }
