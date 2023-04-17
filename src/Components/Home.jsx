@@ -9,10 +9,13 @@ function Home() {
     useEffect(() => {
         // read from local storage
         const todos = localStorage.getItem('todos')
-        // string -> js arr
-        const todosArr = JSON.parse(todos)
-        // state update
-        setTodoList(todosArr)
+        if(todos!=null){
+            // string -> js arr
+            const todosArr = JSON.parse(todos)
+            // state update
+            setTodoList(todosArr)
+        }
+        
     }, [])
 
     const newTodoHandle = (todo) => {

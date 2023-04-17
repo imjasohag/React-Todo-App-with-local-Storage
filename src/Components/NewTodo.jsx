@@ -8,11 +8,16 @@ function NewTodo(props) {
 
     const controlSubmit = (e) => {
         e.preventDefault()
-        props.newTodo({ title, des })
-        setTitle('');
-        setDes('')
-
-
+        if (!title) {
+            alert('input todo title')
+        }
+        else if (!des) {
+            alert('input todo description')
+        } else {
+            props.newTodo({ title, des })
+            setTitle('');
+            setDes('')
+        }
     }
     const changeTitle = (e) => {
 
